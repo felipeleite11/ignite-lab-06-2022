@@ -1,10 +1,8 @@
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from 'phosphor-react'
 import { Link } from './Link'
-import { DefaultUi, Player, Youtube } from '@vime/react'
+import { gql, useQuery } from '@apollo/client'
 
 import '@vime/core/themes/default.css'
-
-import { gql, useQuery } from '@apollo/client'
 
 interface VideoPros {
 	lessonSlug: String
@@ -55,10 +53,12 @@ export function Video({ lessonSlug }: VideoPros) {
 		<div className="flex-1">
 			<div className="bg-black flex justify-center">
 				<div className="h-full w-full max-w-[62vw] aspect-video">
-					<Player>
-						<Youtube videoId={data.lesson.videoId} />
-						<DefaultUi />
-					</Player>
+					<iframe
+						src={`https://www.youtube.com/embed/${data.lesson.videoId}`}
+						className="w-full min-h-full"
+						title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowFullScreen
+					></iframe>
 				</div>
 			</div>
 

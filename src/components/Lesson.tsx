@@ -21,7 +21,10 @@ export function Lesson({ title, slug, availableAt, type }: LessonProps) {
 	const isCurrentLesson = slugParam === slug
 
 	return (
-		<Link to={isAvailable ? `/event/lesson/${slug}` : ''} className="group">
+		<Link to={isAvailable ? `/event/lesson/${slug}` : ''} className={classNames('group', {
+			'cursor-not-allowed': !isAvailable,
+			'cursor-pointer': isAvailable
+		})}>
 			<span className="text-gray-300">
 				{availableAtFormattedDate}
 			</span>
