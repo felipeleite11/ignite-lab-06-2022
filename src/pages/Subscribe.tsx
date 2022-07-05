@@ -31,7 +31,7 @@ export function Subscribe() {
 	}
 
 	return (
-		<div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
+		<div className="min-h-fit bg-blur bg-cover bg-no-repeat flex flex-col items-center">
 			<div className="w-full max-w-[1100px] flex items-center justify-between mt-20">
 				<div className="max-w-[640px]">
 					<Logo />
@@ -73,7 +73,7 @@ export function Subscribe() {
 				</div>
 			</div>
 
-			<img src="/code-mockup.png" alt="" className="mt-10" />
+			<img src="/code-mockup.png" alt="" className="mt-[-2rem]" />
 		</div>
 	)
 }
